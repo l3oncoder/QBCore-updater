@@ -1,5 +1,5 @@
-#Kill any screens
-killall screen
+#Kill FiveM screen
+screen -S FiveM -X quit
 
 #Setting our work dictory as same location as script
 cd "$(dirname "$0")"
