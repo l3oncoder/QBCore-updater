@@ -17,7 +17,7 @@ rm -Rf /home/FiveM/resources/[qb] && mkdir -p /home/FiveM/resources/[qb] && mv q
 rm -Rf /home/FiveM/resources/[standalone]/ && mkdir -p /home/FiveM/resources/[standalone]  && mv * /home/FiveM/resources/[standalone]
 
 #Now let grab latest FiveM files
-rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citizenfx/cfx-server-data.git /home/FiveM/resources/[cfx-default]
+rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citizenfx/cfx-server-data.git /home/FiveM/resources/[cfx-default] && cd
 
 #Now let grab latest artifact
 url=https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
