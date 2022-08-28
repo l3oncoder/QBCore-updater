@@ -39,6 +39,7 @@ rm -Rf /home/run.sh && rm -Rf /home/alpine && mv alpine /home && mv run.sh /home
 rm -Rf /home/FiveM/cache
 cd
 rm -Rf [qb]
+rm -Rf [cfx]
 
 
 cd /home && screen -dmS FiveM bash run.sh; exec bash
