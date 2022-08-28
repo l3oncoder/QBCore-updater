@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 mkdir [qb] && cd [qb] && curl -s https://api.github.com/orgs/qbcore-framework/repos?per_page=200 | jq -r '.[].clone_url' | xargs -n 1 git clone
 
 #Here we remove script we do not need
-rm -Rf qb-fitbit qb-hud qb-docs txAdminRecipe qb-npwd qb-loading qb-commandbinding prison_map dealer_map hospital_map LegacyFuel fivem-vstancer dpemotes .github qb-atm
+rm -Rf qb-fitbit qb-hud qb-docs txAdminRecipe qb-npwd qb-loading qb-commandbinding prison_map tutorial-script dealer_map hospital_map LegacyFuel fivem-vstancer dpemotes .github qb-atm
 
 #Now Remove old [qb] folder based on my folder being the following /home/FiveM/resources/[qb]
 rm -Rf /home/FiveM/resources/[qb] && mkdir -p /home/FiveM/resources/[qb] && mv qb-* /home/FiveM/resources/[qb]
@@ -23,7 +23,7 @@ rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citi
 url=https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
 version=$(curl  -sS 'https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/' | grep OPTIONAL  | sort | tail -1 | sed -n 's/.*LATEST OPTIONAL.."*//p' | sed 's/.$//')
 getnewversion=$(curl 'https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/' |
-    sed -e 's/^<a href=["'"'"']//i' | 
+    sed -e 's/^<a href=["'"'"']//i' |
     awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' |  grep $version | awk '{ print $2 }' | sed -n 's/.*href="..\([^"]*\).*/\1/p')
 echo $getnewversion
 newversion="${url}${getnewversion}"
@@ -31,13 +31,14 @@ echo $newversion
 wget "$newversion"
 tar xf fx.tar.xz
 rm fx.tar.xz
+
 #Remove old artifact files assuming it in /home and extract new
-rm -Rf /home/run.sh && rm -Rf /home/alpine && tar xf fx.tar.xz && mv alpine /home && mv run.sh /home
+rm -Rf /home/run.sh && rm -Rf /home/alpine && mv alpine /home && mv run.sh /home
 
 #Remove cache /home/FiveM/cache
 rm -Rf /home/FiveM/cache
+cd
 rm -Rf [qb]
+
+
 cd /home && screen -dmS FiveM bash run.sh; exec bash
-echo "Task complete"
-
-
