@@ -32,7 +32,7 @@ wget "$newversion"
 tar xf fx.tar.xz
 rm fx.tar.xz
 #Remove old artifact files assuming it in /home and extract new
-rm -Rf /home/run.sh && rm -Rf /home/alpine && tar xf fx.tar.xz && mv alpine run.sh /home
+rm -Rf /home/run.sh && rm -Rf /home/alpine && tar xf fx.tar.xz && mv alpine /home/alpine %% mv run.sh /home/run.sh
 
 #Remove cache /home/FiveM/cache
 rm -Rf /home/FiveM/cache
