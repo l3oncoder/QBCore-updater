@@ -26,12 +26,11 @@ getnewversion=$(curl 'https://runtime.fivem.net/artifacts/fivem/build_proot_linu
     sed -e 's/^<a href=["'"'"']//i' | 
     awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' |  grep $version | awk '{ print $2 }' | sed -n 's/.*href="..\([^"]*\).*/\1/p')
 echo $getnewversion
-newversion=$"${url}${getnewversion}"
+newversion="${url}${getnewversion}"
 echo $newversion
-curl -O "$newversion"
+wget "$newversion"
 tar xf fx.tar.xz
 rm fx.tar.xz
-screen -dmS txAdmin bash run.sh; exec bash
 #Remove old artifact files assuming it in /home and extract new
 rm -Rf /home/run.sh && rm -Rf /home/alpine && tar xf fx.tar.xz && mv alpine run.sh /home
 
