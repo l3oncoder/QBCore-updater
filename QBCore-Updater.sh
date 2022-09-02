@@ -16,6 +16,10 @@ rm -Rf /home/FiveM/resources/[qb] && mkdir -p /home/FiveM/resources/[qb] && mv q
 #Now move the remaining scripts to /home/FiveM/resources/[standalone]
 rm -Rf /home/FiveM/resources/[standalone]/ && mkdir -p /home/FiveM/resources/[standalone]  && mv * /home/FiveM/resources/[standalone]
 
+#add latest oxmysql
+rm -Rf /home/FiveM/resources/[standalone]/oxmysql &&  git clone https://github.com/overextended/oxmysql.git /home/FiveM/resources/[standalone]/oxmysql
+
+
 #Now let grab latest FiveM files
 rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citizenfx/cfx-server-data.git [cfx] && cd [cfx]/resources && mkdir -p /home/FiveM/resources/[cfx-default] && mv * /home/FiveM/resources/[cfx-default] && cd
 
