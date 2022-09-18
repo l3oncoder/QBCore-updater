@@ -23,6 +23,18 @@ rm -Rf /home/FiveM/resources/[standalone]/ && mkdir -p /home/FiveM/resources/[st
 #Now let grab latest FiveM files
 rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citizenfx/cfx-server-data.git [cfx] && cd [cfx]/resources && mkdir -p /home/FiveM/resources/[cfx-default] && mv * /home/FiveM/resources/[cfx-default] && cd
 
+
+#Lets update npwd
+mkdir [phone] && cd [phone] && curl -s https://api.github.com/orgs/npwd-community/repos?per_page=200 | jq -r '.[].clone_url' | xargs -n 1 git clone
+
+
+#Remove unneeded phone apps
+#Notice this must reflect the app in npwd/config.json
+rm -Rf npwd_qb_garage npwd_qb_mail
+
+#Now Remove old [phone] folder based on my folder being the following /home/FiveM/resources/[phone]
+rm -Rf /home/FiveM/resources/[phone] && mkdir -p /home/FiveM/resources/[phone] && mv npwd_* /home/FiveM/resources/[phone]
+
 #Now let grab latest artifact
 url=https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
 version=$(curl  -sS 'https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/' | grep OPTIONAL  | sort | tail -1 | sed -n 's/.*LATEST OPTIONAL.."*//p' | sed 's/.$//')
@@ -44,6 +56,7 @@ rm -Rf /home/FiveM/cache
 cd
 rm -Rf [qb]
 rm -Rf [cfx]
+rm -Rf [phone]
 
 
 cd /home && screen -dmS FiveM bash run.sh; exec bash
