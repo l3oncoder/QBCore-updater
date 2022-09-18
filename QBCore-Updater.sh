@@ -11,7 +11,7 @@ mkdir [qb] && cd [qb] && curl -s https://api.github.com/orgs/qbcore-framework/re
 rm -Rf qb-fitbit qb-hud qb-docs txAdminRecipe qb-npwd qb-loading qb-commandbinding prison_map tutorial-script dealer_map hospital_map LegacyFuel fivem-vstancer dpemotes .github qb-atm
 
 #Now Remove old [qb] folder based on my folder being the following /home/FiveM/resources/[qb]
-rm -Rf /home/FiveM/resources/[qb] && mkdir -p /home/FiveM/resources/[qb] && mv qb-* /home/FiveM/resources/[qb]
+rm -Rf /home/FiveM/resources/[qb] && mkdir -p /home/FiveM/resources/[qb] && mv qb-* npwd /home/FiveM/resources/[qb]
 
 #Now move the remaining scripts to /home/FiveM/resources/[standalone]
 rm -Rf /home/FiveM/resources/[standalone]/ && mkdir -p /home/FiveM/resources/[standalone]  && mv * /home/FiveM/resources/[standalone]
