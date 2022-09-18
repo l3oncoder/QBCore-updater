@@ -30,7 +30,7 @@ mkdir [phone] && cd [phone] && curl -s https://api.github.com/orgs/npwd-communit
 
 #Remove unneeded phone apps
 #Notice this must reflect the app in npwd/config.json
-rm -Rf npwd_qb_garage npwd_qb_mail
+rm -Rf npwd_qb_garage npwd_qb_mail npwd_props
 
 #Now Remove old [phone] folder based on my folder being the following /home/FiveM/resources/[phone]
 rm -Rf /home/FiveM/resources/[phone] && mkdir -p /home/FiveM/resources/[phone] && mv npwd_* /home/FiveM/resources/[phone]
