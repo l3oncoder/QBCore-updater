@@ -20,8 +20,6 @@ rm -Rf /home/FiveM/resources/[standalone]/ && mkdir -p /home/FiveM/resources/[st
 #Now let grab latest FiveM files
 rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citizenfx/cfx-server-data.git [cfx] && cd [cfx]/resources && mkdir -p /home/FiveM/resources/[cfx-default] && mv * /home/FiveM/resources/[cfx-default] && cd
 
-#Now Remove old [phone] folder based on my folder being the following /home/FiveM/resources/[phone]
-rm -Rf /home/FiveM/resources/[phone] && mkdir -p /home/FiveM/resources/[phone] && mv npwd_* /home/FiveM/resources/[phone]
 
 #Now let grab latest artifact based on latest recommended
 url=https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
@@ -44,7 +42,6 @@ rm -Rf /home/FiveM/cache
 cd
 rm -Rf [qb]
 rm -Rf [cfx]
-rm -Rf [phone]
 
 #Run FiveM inside screen
 cd /home && screen -dmS FiveM bash run.sh; exec bash
