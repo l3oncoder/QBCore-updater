@@ -16,6 +16,10 @@ rm -Rf /home/FiveM/resources/[qb] && mkdir -p /home/FiveM/resources/[qb] && mv q
 #Now move the remaining scripts to /home/FiveM/resources/[standalone]
 rm -Rf /home/FiveM/resources/[standalone]/ && mkdir -p /home/FiveM/resources/[standalone]  && mv * /home/FiveM/resources/[standalone]
 
+#Let Graab overextended content
+rm -Rf  /home/FiveM/resources/[ox] && git clone https://github.com/overextended/ox_lib.git /home/FiveM/resources/[ox]/ && git clone https://github.com/overextended/ox_target.git /home/FiveM/resources/[ox]/ && cd
+
+
 
 #Now let grab latest FiveM files
 rm -Rf  /home/FiveM/resources/[cfx-default] && git clone https://github.com/citizenfx/cfx-server-data.git [cfx] && cd [cfx]/resources && mkdir -p /home/FiveM/resources/[cfx-default] && mv * /home/FiveM/resources/[cfx-default] && cd
