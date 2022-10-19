@@ -5,7 +5,7 @@ screen -S FiveM -X quit
 cd "$(dirname "$0")"
 
 #Making temporary folder to clone to and later remove
-mkdir [qb] && cd [qb] && curl -s https://api.github.com/orgs/QBCore-Remastered/repos?per_page=200 | jq -r '.[].clone_url' | xargs -n 1 git clone
+mkdir [qb] && cd [qb] && curl -s https://api.github.com/orgs/Qbox-project/repos?per_page=200 | jq -r '.[].clone_url' | xargs -n 1 git clone
 
 #Here we remove script we do not need
 rm -Rf txAdminRecipe qb-commandbinding 
