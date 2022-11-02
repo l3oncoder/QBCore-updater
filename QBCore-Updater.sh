@@ -1,6 +1,16 @@
 #Kill FiveM screen
 screen -S FiveM -X quit
 
+##################################################
+#                                                #
+# Because of Drama of between QBox & QBCORE      #
+# Updates to this script has ended               #
+##################################################
+
+
+
+
+
 #Setting our work dictory as same location as script
 cd "$(dirname "$0")"
 
