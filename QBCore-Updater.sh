@@ -3,8 +3,9 @@ screen -S FiveM -X quit
 
 ##################################################
 #                                                #
-# Because of Drama of between QBox & QBCORE      #
+# Because of Drama between QBox & QBCORE         #
 # Updates to this script has ended               #
+#                                                #
 ##################################################
 
 
