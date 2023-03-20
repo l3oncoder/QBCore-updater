@@ -21,7 +21,7 @@ FIVEM_REMOVE_CHAT_THEME="false"
 FIVEM_DOWLOAD_ARTIFACT="false"
 # Valid values: true, false (CASE SENSITIVE!)
 FIVEM_USE_CUSTOM_PATCH="false"
-# Private Github repository containing custom patches. E.g. USERNAME/REPOSITORY.git. Patch example [qb]/qb-core/config.lua would replace resources/[qb]/qb-core/config.lua
+# Private Github repository containing custom patches. E.g. USERNAME/REPOSITORY.git. Patch example [qb]/qbx-core/config.lua would replace resources/[qb]/qbx-core/config.lua
 FIVEM_CUSTOM_PATCH_REPO="USERNAME/REPOSITORY.git"
 # Name of screen session.
 FIVEM_SCREEN_NAME="FiveM"
