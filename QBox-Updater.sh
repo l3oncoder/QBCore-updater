@@ -27,10 +27,10 @@ FIVEM_CUSTOM_PATCH_REPO="USERNAME/REPOSITORY.git"
 FIVEM_SCREEN_NAME="FiveM"
 
 # Stuff to remove before the update
-CLEAN_FILES="${FIVEM_CACHE} ${FIVEM_RESOURCES}/[ox] ${FIVEM_RESOURCES}/[qb] ${FIVEM_RESOURCES}/[standalone] ${FIVEM_RESOURCES}/[cfx-default] ${FIVEM_RESOURCES}/[cfx-default-temp] ${FIVEM_RESOURCES}/[patch]"
+CLEAN_FILES="${FIVEM_CACHE} ${FIVEM_RESOURCES}/[ox] ${FIVEM_RESOURCES}/[qbx] ${FIVEM_RESOURCES}/[standalone] ${FIVEM_RESOURCES}/[cfx-default] ${FIVEM_RESOURCES}/[cfx-default-temp] ${FIVEM_RESOURCES}/[patch]"
 
 # Stuff to ignore when downloading QB.
-QB_IGNORE_REPOS="txAdminRecipe\|qb-commandbinding"
+QB_IGNORE_REPOS="txAdminRecipe\|qbx-commandbinding"
 
 function downloadArtifact() {
 	URL="https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/"
@@ -133,17 +133,17 @@ downloadFileInstall $(getLatestDownloadLink "overextended/ox_doorlock") "${FIVEM
 
 # QB related stuff
 echo "Deleting 'qb' and 'standalone' resources..."
-rm -Rf "${FIVEM_RESOURCES}/[standalone]" "${FIVEM_RESOURCES}/[qb]"
+rm -Rf "${FIVEM_RESOURCES}/[standalone]" "${FIVEM_RESOURCES}/[qbx]"
 
 echo "Creating directories..."
-mkdir -p "${FIVEM_RESOURCES}/[standalone]" "${FIVEM_RESOURCES}/[qb]"
+mkdir -p "${FIVEM_RESOURCES}/[standalone]" "${FIVEM_RESOURCES}/[qbx]"
 
 echo "Cloning QB repositories..."
 cd "${FIVEM_RESOURCES}/[standalone]"
 curl -s https://api.github.com/orgs/Qbox-project/repos?per_page=200 | grep "clone_url" | cut -d '"' -f4 | grep -v "${QB_IGNORE_REPOS}" | xargs -n 1 git clone
 
 echo "Moving files to their corresponding location..."
-mv qb-* "${FIVEM_RESOURCES}/[qb]"
+mv qb-* "${FIVEM_RESOURCES}/[qbx]"
 
 cd ..
 
@@ -165,7 +165,7 @@ if [[ "${FIVEM_USE_CUSTOM_PATCH}" == "true" ]]; then
 	#Apply our patches
 	git clone "https://${TOKEN}@github.com/${FIVEM_CUSTOM_PATCH_REPO}" "${FIVEM_RESOURCES}/[patch]"
 	cd "${FIVEM_RESOURCES}/[patch]"
-	cp -r "[qb]" "${FIVEM_RESOURCES}"
+	cp -r "[qbx]" "${FIVEM_RESOURCES}"
 	cd ..
 	rm -Rf "${FIVEM_RESOURCES}/[patch]"
 fi
